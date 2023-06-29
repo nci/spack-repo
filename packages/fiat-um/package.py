@@ -16,6 +16,10 @@ class FiatUm(CMakePackage):
         args = ["-DCMAKE_BUILD_TYPE=Release","-DENABLE_MPI=ON","-DENABLE_OMP=ON"]
         return args
 
-
+    def setup_build_environment(self, env):
+        spec = self.spec
+        env.set("CC", spec["mpi"].mpicc)
+        env.set("CXX", spec["mpi"].mpicxx)
+        env.set("FC", spec["mpi"].mpifc)
 
 

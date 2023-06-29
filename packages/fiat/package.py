@@ -52,3 +52,8 @@ class Fiat(CMakePackage):
         return args
 
 
+    def setup_build_environment(self, env):
+        spec = self.spec
+        env.set("CC", spec["mpi"].mpicc)
+        env.set("CXX", spec["mpi"].mpicxx)
+        env.set("FC", spec["mpi"].mpifc)
