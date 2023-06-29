@@ -1,6 +1,6 @@
 from spack.package import *
 
-class Mom(Package):
+class Mom6(Package):
     """FIXME: Put a proper description of your package here."""
 
     homepage = ""
@@ -25,7 +25,7 @@ class Mom(Package):
             gencmd=Executable(self.stage.source_path+"/build/mom6-ninja-nci/gen_build.sh")
             gencmd()
 
-	with working_dir(self.stage.source_path+"/build/mom6-ninja-nci/shared"):
+        with working_dir(self.stage.source_path+"/build/mom6-ninja-nci/shared"):
             gencmd=Executable(self.stage.source_path+"/build/mom6-ninja-nci/shared/gen_build.sh")
             gencmd()
             ninja()
@@ -35,5 +35,5 @@ class Mom(Package):
             gencmd()
             ninja()
 
-	mkdirp(prefix.bin)
+        mkdirp(prefix.bin)
         install("build/mom6-ninja-nci/ice_ocean_SIS2_symmetric/MOM6", prefix.bin + "/MOM6")

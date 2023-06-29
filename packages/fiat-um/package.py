@@ -13,8 +13,8 @@ class FiatUm(CMakePackage):
     depends_on("mpi")
 
     def cmake_args(self):
-	args = ["-DCMAKE_BUILD_TYPE=Release","-DENABLE_MPI=ON","-DENABLE_OMP=ON"]
-	return args
+        args = ["-DCMAKE_BUILD_TYPE=Release","-DENABLE_MPI=ON","-DENABLE_OMP=ON"]
+        return args
 
 
 
