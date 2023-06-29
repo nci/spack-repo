@@ -4,7 +4,7 @@ This is the spack package repository maintained by NCI for packages that are not
 
 To use it, firstly run:
 
-`git clone git@git.nci.org.au:nci-rei/hpc-opt/spack_packages.git `
+`git clone https://github.com/nci/spack-repo.git`
 
 and then add the location of the cloned repository to your spack instance:
 
