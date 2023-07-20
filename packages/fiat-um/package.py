@@ -22,4 +22,10 @@ class FiatUm(CMakePackage):
         env.set("CXX", spec["mpi"].mpicxx)
         env.set("FC", spec["mpi"].mpifc)
 
-
+    def setup_run_environment(self, env):
+        env.prepend_path("CPATH", self.prefix.include.fiat)
+        env.prepend_path("CPATH", self.prefix.module.fiat)
+        env.prepend_path("CPATH", self.prefix.module.parkind_dp)
+        env.prepend_path("FPATH", self.prefix.include.fiat)
+        env.prepend_path("FPATH", self.prefix.module.fiat)
+        env.prepend_path("FPATH", self.prefix.module.parkind_dp)

@@ -15,7 +15,7 @@ Finally you can  confirm it is has been added correctly:
 ```
 $ spack repo list
 ==> 2 package repositories.
-NCI           $PACKAGE_PATH/spack-repo
+nci           $PACKAGE_PATH/spack-repo
 builtin       $SPACK_ROOT/var/spack/repos/builtin
 ```
 
