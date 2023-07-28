@@ -1,3 +1,4 @@
+import os
 from spack.package import *
 
 class FiatUm(CMakePackage):
@@ -8,7 +9,6 @@ class FiatUm(CMakePackage):
     version("1.1.0", branch="um")
 
     maintainers("rxy900")
-
     depends_on("ecbuild")
     depends_on("mpi")
 
@@ -22,6 +22,16 @@ class FiatUm(CMakePackage):
         env.set("CXX", spec["mpi"].mpicxx)
         env.set("FC", spec["mpi"].mpifc)
 
+    @run_after('install')
+    def create_symlink(self):
+        print("NOTICE:",self.spec.prefix.lib64)
+        if os.path.isdir(self.spec.prefix.lib64):
+            original_lib = join_path(prefix.lib64,'libfiat.so')
+            symlink_lib = join_path(prefix.lib64,'libdrhook.so')
+            symlink(original_lib, symlink_lib)            
+        else:
+            print(self.spec.prefix.lib64+" does not exist!")
+        
     def setup_run_environment(self, env):
         env.prepend_path("CPATH", self.prefix.include.fiat)
         env.prepend_path("CPATH", self.prefix.module.fiat)
