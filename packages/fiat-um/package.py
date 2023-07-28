@@ -26,7 +26,6 @@ class FiatUm(CMakePackage):
 
     @run_after('install')
     def create_symlink(self):
-        print("NOTICE:",self.spec.prefix.lib64)
         if os.path.isdir(self.spec.prefix.lib64):
             original_lib = join_path(prefix.lib64,'libfiat.so')
             symlink_lib = join_path(prefix.lib64,'libdrhook.so')
