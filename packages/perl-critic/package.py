@@ -3,30 +3,13 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install perl-critic
-#
-# You can edit this file again by typing:
-#
-#     spack edit perl-critic
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
-
 from spack.package import *
-
 
 class PerlCritic(PerlPackage):
     """ 
 Critique Perl source code for best-practices.
 """
+    maintainers("rxy900")
     homepage = "https://metacpan.org/pod/Perl::Critic"
     url = "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/Perl-Critic-1.150.tar.gz"
     version("1.150",sha256="e5cd95de3e43bce70775176274baa405f326fc8740df0054bb816975cc8d349b",preferred=True)
