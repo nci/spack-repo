@@ -19,7 +19,7 @@ class Shumlib(MakefilePackage):
     version("2023.03.1", revision=6731)
     version("2023.06.1", revision=6823)    
     variant("platform", values=(["nci-x86","bom-xc40"]), default="nci-x86", description="", multi=False)
-    patch("c_shum_compiler_select.patch") , when="@2023.06.1:um13.3")
+    patch("c_shum_compiler_select.patch" , when="@2023.06.1")
     
     def get_arch_comp(self):
         if self.spec.satisfies("%intel"):
